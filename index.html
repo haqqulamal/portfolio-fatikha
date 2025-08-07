@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Fatikha Choirotul | Mahasiswi Kebidanan</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiNlYzQ4OTkiLz4KPHRleHQgeD0iMTYiIHk9IjIxIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iYm9sZCI+RkM8L3RleHQ+Cjwvc3ZnPgo="
+    />
+    <link
+      rel="apple-touch-icon"
+      href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE4MCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjkwIiBjeT0iOTAiIHI9IjkwIiBmaWxsPSIjZWM0ODk5Ii8+Cjx0ZXh0IHg9IjkwIiB5PSIxMTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNzIiIGZvbnQtd2VpZ2h0PSJib2xkIj5GQzwvdGV4dD4KPC9zdmc+Cg=="
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #fef7f7; /* Very light pink */
+        color: #334155; /* slate-700 */
+      }
+      .card {
+        @apply bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+      }
+      .btn {
+        @apply inline-block font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2;
+      }
+      .btn-primary {
+        @apply bg-pink-600 text-white hover:bg-pink-700 focus:ring-pink-500;
+      }
+      .btn-secondary {
+        @apply bg-white text-slate-700 hover:bg-slate-100 focus:ring-slate-500;
+      }
+      .section-title {
+        font-size: 2.5rem; /* setara text-5xl */
+        font-weight: 800; /* Extra bold */
+        color: #1e293b; /* slate-800 */
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+        text-align: center;
+      }
+      .section-subtitle {
+        font-size: 1.25rem; /* setara text-xl */
+        color: #64748b; /* slate-500 */
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+      .nav-link {
+        @apply text-slate-600 font-medium hover:text-pink-600 transition-colors duration-300;
+      }
+      /* Animasi fade-in saat scroll */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header & Navigasi -->
+    <header class="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+      <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#home" class="text-2xl font-bold text-pink-600">Fatikha C.</a>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#about" class="nav-link">Tentang</a>
+          <a href="#experience" class="nav-link">Pengalaman</a>
+          <a href="#certificates" class="nav-link">Sertifikat</a>
+          <a href="#skills" class="nav-link">Keterampilan</a>
+          <a href="#contact" class="bg-pink-100 text-pink-700 px-4 py-2 rounded-full font-semibold hover:bg-pink-200 transition-colors text-sm">Hubungi Saya</a>
+        </div>
+        <button id="mobile-menu-button" class="md:hidden">
+          <i data-lucide="menu" class="text-slate-700"></i>
+        </button>
+      </nav>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+        <a href="#about" class="block py-2 nav-link">Tentang</a>
+        <a href="#experience" class="block py-2 nav-link">Pengalaman</a>
+        <a href="#certificates" class="block py-2 nav-link">Sertifikat</a>
+        <a href="#skills" class="block py-2 nav-link">Keterampilan</a>
+        <a href="#contact" class="block py-2 nav-link">Hubungi Saya</a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="container mx-auto px-6 py-24 md:py-32 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 text-center md:text-left mb-12 md:mb-0">
+        <span class="font-semibold text-pink-600">Halo, saya Fatikha Choirotul</span>
+        <h1 class="text-5xl md:text-6xl font-bold text-slate-800 my-4 leading-tight">Calon Bidan Profesional & Inovatif.</h1>
+        <p class="text-lg text-slate-600 max-w-lg mx-auto md:mx-0 mb-8">Mahasiswi kebidanan yang bersemangat mengintegrasikan kearifan tradisional dengan teknologi modern untuk pelayanan kesehatan ibu dan anak yang lebih baik.</p>
+        <div class="flex justify-center md:justify-start space-x-4">
+          <a
+            href="#contact"
+            class="inline-block font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-offset-2 text-white bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600"
+          >
+            Hubungi Saya
+          </a>
+          <a
+            href="#experience"
+            class="inline-block font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 text-slate-700 bg-gradient-to-r from-slate-100 to-slate-200 hover:from-slate-200 hover:to-slate-300"
+          >
+            Lihat Pengalaman
+          </a>
+        </div>
+      </div>
+      <div class="md:w-1/2 flex justify-center">
+        <div class="relative w-72 h-72 md:w-96 md:h-96">
+          <div class="absolute inset-0 bg-gradient-to-br from-pink-300 to-rose-400 rounded-full blur-2xl opacity-50"></div>
+          <img src="./asset/img/WhatsApp Image 2025-08-07 at 22.31.08.jpeg" alt="Foto Profil Fatikha Choirotul" class="relative rounded-full w-full h-full object-cover shadow-2xl border-4 border-white" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Tentang Saya -->
+    <section id="about" class="py-24 bg-white">
+      <div class="container mx-auto px-6 text-center reveal">
+        <h2 class="section-title">Tentang Saya</h2>
+        <p class="section-subtitle">Perpaduan antara semangat, empati, dan profesionalisme.</p>
+        <p class="max-w-3xl mx-auto text-lg leading-relaxed text-slate-600">
+          Saya adalah seorang pembelajar seumur hidup yang ceria dan mudah bergaul, dengan rasa ingin tahu yang tinggi. Saya percaya bahwa setiap tantangan adalah peluang untuk tumbuh. Sebagai seorang *team player*, saya mampu berpikir
+          kritis dan cepat dalam mencari solusi, sambil tetap memegang teguh prinsip kesopanan dan etos kerja yang kuat. Adaptasi dan perkembangan adalah kunci bagi saya untuk memberikan yang terbaik.
+        </p>
+      </div>
+    </section>
+
+    <!-- Pengalaman -->
+    <section id="experience" class="py-20 bg-slate-50">
+      <div class="container mx-auto px-6 md:px-10 lg:px-16">
+        <div class="text-center">
+          <h2 class="section-title">Jejak Langkah Profesional</h2>
+          <p class="section-subtitle">Pengalaman klinis dan pelayanan yang membentuk saya.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-10 md:gap-x-16">
+          <div class="space-y-8">
+            <div class="card p-6 reveal">
+              <span class="font-bold text-sm text-pink-600">Feb 2024 - Mar 2024</span>
+              <h3 class="text-xl font-semibold text-slate-800 mt-2">Bidan Jaga (Magang)</h3>
+              <p class="text-slate-500">RS Roemani Muhammadiyah Semarang</p>
+            </div>
+            <div class="card p-6 reveal">
+              <span class="font-bold text-sm text-pink-600">Jul 2022 - Agu 2022</span>
+              <h3 class="text-xl font-semibold text-slate-800 mt-2">Pramusaji Waitress</h3>
+              <p class="text-slate-500">Anonim Cafe</p>
+            </div>
+          </div>
+          <div class="space-y-8">
+            <div class="card p-6 reveal">
+              <span class="font-bold text-sm text-pink-600">Agu 2023 - Sep 2023</span>
+              <h3 class="text-xl font-semibold text-slate-800 mt-2">Bidan Jaga (Magang)</h3>
+              <p class="text-slate-500">Klinik Nawang Medista</p>
+            </div>
+            <div class="card p-6 reveal">
+              <span class="font-bold text-sm text-pink-600">Jul 2021 - Des 2021</span>
+              <h3 class="text-xl font-semibold text-slate-800 mt-2">Crew Outlet</h3>
+              <p class="text-slate-500">Golden Cell</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sertifikat -->
+    <section id="certificates" class="py-24 bg-white">
+      <div class="container mx-auto px-6 reveal">
+        <div class="text-center">
+          <h2 class="section-title">Sertifikat & Pencapaian</h2>
+          <p class="section-subtitle">Bukti komitmen saya terhadap pengembangan diri dan keilmuan.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Sertifikat 1 -->
+          <div class="card group cursor-pointer reveal" onclick="openModal('https://placehold.co/800x600/fdf2f8/ec4899?text=Sertifikat+PKM-RE')">
+            <div class="overflow-hidden rounded-lg">
+              <img src="https://placehold.co/600x400/fdf2f8/ec4899?text=Sertifikat+PKM-RE" alt="Sertifikat Juara Harapan II PKM-RE" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" />
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-slate-800">Juara Harapan II PKM-RE</h3>
+              <p class="text-sm text-slate-500 mt-1">Karya Ilmiah "Efektivitas Aromaterapi Lavender"</p>
+            </div>
+          </div>
+          <!-- Sertifikat 2 -->
+          <a class="card group cursor-pointer reveal" 
+        href="./asset/sertif/Sertifikat Webinar Fatikha Choirotul Ilmi .pdf" 
+        download 
+        target="_blank">
+        <div class="overflow-hidden rounded-lg">
+            <img src="./asset/img/Screenshot_7-8-2025_225116_.jpeg" 
+                alt="Sertifikat Growth Mindset" 
+                class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <div class="p-4">
+            <h3 class="text-lg font-semibold text-slate-800">
+            Webinar Growth Mindset
+            </h3>
+            <p class="text-sm text-slate-500 mt-1">
+            Sertifikat Partisipasi dalam Webinar
+            </p>
+        </div>
+        </a>
+          <!-- Sertifikat 3 -->
+        <a class="card group cursor-pointer reveal" 
+        href="./asset/sertif/Fatikha Choirotul Ilmi_Sertifikat Webinar The 2nd International Conference Character Education ( ICCE)  Penguatan Pendidikan Karakter Di Era Pandemi”.pdf" 
+        download 
+        target="_blank">
+        <div class="overflow-hidden rounded-lg">
+            <img src="./asset/img/Screenshot_7-8-2025_224351_.jpeg" 
+                alt="Sertifikat International Conference" 
+                class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" />
+        </div>
+        <div class="p-4">
+            <h3 class="text-lg font-semibold text-slate-800">
+            The 2nd Int. Conference on Character Education
+            </h3>
+            <p class="text-sm text-slate-500 mt-1">
+            Penguatan Pendidikan Karakter
+            </p>
+        </div>
+        </a>
+    </section>
+
+    <!-- Modal untuk menampilkan gambar sertifikat -->
+    <div id="certificate-modal" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-[999] hidden p-4" onclick="closeModal()">
+      <div class="relative bg-white p-2 rounded-lg max-w-4xl max-h-full" onclick="event.stopPropagation()">
+        <img id="modal-img" src="" alt="Tampilan Penuh Sertifikat" class="w-full h-auto object-contain max-h-[85vh] rounded-md" />
+        <button onclick="closeModal()" class="absolute -top-4 -right-4 text-white bg-pink-600 rounded-full p-2 hover:bg-pink-700 transition-colors z-10" aria-label="Tutup">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Keterampilan -->
+    <section id="skills" class="py-24">
+      <div class="container mx-auto px-6 reveal">
+        <div class="text-center">
+          <h2 class="section-title">Keterampilan Saya</h2>
+          <p class="section-subtitle">Perangkat yang saya gunakan untuk memberikan pelayanan terbaik.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
+          <div class="card p-6 reveal">
+            <i data-lucide="heart-pulse" class="w-12 h-12 text-pink-600 mx-auto mb-4"></i>
+            <h3 class="text-lg font-semibold">Pelayanan Pelanggan</h3>
+          </div>
+          <div class="card p-6 reveal">
+            <i data-lucide="users" class="w-12 h-12 text-pink-600 mx-auto mb-4"></i>
+            <h3 class="text-lg font-semibold">Berbicara di Depan Umum</h3>
+          </div>
+          <div class="card p-6 reveal">
+            <i data-lucide="presentation" class="w-12 h-12 text-pink-600 mx-auto mb-4"></i>
+            <h3 class="text-lg font-semibold">Keterampilan Presentasi</h3>
+          </div>
+          <div class="card p-6 reveal">
+            <i data-lucide="file-text" class="w-12 h-12 text-pink-600 mx-auto mb-4"></i>
+            <h3 class="text-lg font-semibold">Microsoft Word</h3>
+          </div>
+          <div class="card p-6 reveal">
+            <i data-lucide="file-spreadsheet" class="w-12 h-12 text-pink-600 mx-auto mb-4"></i>
+            <h3 class="text-lg font-semibold">Microsoft Excel</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak -->
+    <footer id="contact" class="bg-slate-800 text-white py-24">
+      <div class="container mx-auto px-6 text-center reveal">
+        <h2 class="text-4xl font-bold mb-4">Tertarik untuk Berkolaborasi?</h2>
+        <p class="max-w-2xl mx-auto mb-10 text-slate-300">Saya terbuka untuk diskusi mengenai peluang magang, kerja, atau proyek di bidang kesehatan. Mari ciptakan dampak positif bersama.</p>
+        <a href="mailto:fatikhachoirotul@gmail.com" class="btn btn-primary text-lg inline-flex items-center">
+          <span>Kirim Email</span>
+          <i data-lucide="send" class="ml-2 w-5 h-5"></i>
+        </a>
+        <div class="flex justify-center space-x-8 mt-12">
+          <a href="#" class="text-slate-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i data-lucide="linkedin" class="w-7 h-7"></i>
+          </a>
+          <a href="https://instagram.com/fatikhacht" class="text-slate-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i data-lucide="instagram" class="w-7 h-7"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="bg-slate-900 text-center py-4">
+      <p class="text-slate-400 text-sm">&copy; 2025 Fatikha Choirotul. Dirancang dengan Penuh Semangat.</p>
+    </div>
+
+    <script>
+      // Inisialisasi Lucide Icons
+      lucide.createIcons();
+
+      // Logika untuk menu mobile
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Logika untuk modal sertifikat
+      const modal = document.getElementById("certificate-modal");
+      const modalImg = document.getElementById("modal-img");
+
+      function openModal(imgSrc) {
+        modalImg.src = imgSrc;
+        modal.classList.remove("hidden");
+        document.body.style.overflow = "hidden"; // Mencegah scroll di background
+      }
+
+      function closeModal() {
+        modal.classList.add("hidden");
+        document.body.style.overflow = "auto";
+      }
+
+      // Menutup modal dengan tombol Escape
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closeModal();
+        }
+      });
+
+      // Logika untuk animasi saat scroll
+      const revealElements = document.querySelectorAll(".reveal");
+      const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        revealElements.forEach((el) => {
+          const elementTop = el.getBoundingClientRect().top;
+          if (elementTop < windowHeight - 100) {
+            // Muncul saat elemen 100px dari bawah viewport
+            el.classList.add("active");
+          }
+        });
+      };
+
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll(); // Jalankan sekali saat load
+    </script>
+  </body>
+</html>
